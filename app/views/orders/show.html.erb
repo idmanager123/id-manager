@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+<p>
+  <strong>Name:</strong>
+  <%= @order.name %>
+  <strong> <%= !@order.paid_for? ? " | Missing payments" : "" %></strong> | 
+  Theoretical Profit: <%= OrdersHelper::Formatter.color_neg(@order_report.theoretical_profit).html_safe %> | 
+  Current profit: <%= OrdersHelper::Formatter.color_neg(@order_report.profit).html_safe %>
+</p>
+<%= render 'shared/customer_form'%>
+
+<a role="button" class="btn swag btn-primary" href="<%=new_order_customer_path @order%>" >Add Customer</a>
+<a role="button" style="margin-left:5x" class="btn swag btn-success" href="<%=@export_url%>" >Export</a>
+<br />
+<%= link_to 'Back', orders_path %>

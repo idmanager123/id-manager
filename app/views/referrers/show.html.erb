@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @referrer.name %>
+  <br />
+  <strong># Referred: </strong>
+  <%= @referrer.customers.size %>
+</p>
+<p>
+  <table class="table">
+    <tr>
+      <td></td>
+      <td> Name </td>
+    </tr>
+    <% @referrer.customers.each do |c| %>
+      <tr>
+        <td> <%= image_tag c.photo.url(:thumb)%> </td>
+        <td> <%= c.full_name %> </td>
+      </tr>
+    <% end %>
+  </table>
+
+<%= link_to 'Edit', edit_referrer_path(@referrer) %> |
+<%= link_to 'Back', referrers_path %>

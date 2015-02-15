@@ -1,0 +1,4 @@
+# Put you aws credentials here
+production:
+    access_key_id:
+    secret_access_key:

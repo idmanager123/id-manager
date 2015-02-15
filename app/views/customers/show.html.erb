@@ -1,0 +1,46 @@
+<p id="notice"><%= notice %></p>
+<p>
+<a href=<%= @customer.photo.url %>><%= image_tag @customer.photo.url(:small)%></a>
+</p>
+<p>
+  <strong>First name:</strong>
+  <%= @customer.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @customer.last_name %>
+</p>
+
+<p>
+  <strong>Height:</strong>
+  <%= @customer.height %>
+</p>
+
+<p>
+  <strong>Weight:</strong>
+  <%= @customer.weight %>
+</p>
+
+<p>
+  <strong>Eye color:</strong>
+  <%= @customer.eye_color %>
+</p>
+
+<p>
+  <strong>Hair color:</strong>
+  <%= @customer.hair_color %>
+</p>
+
+<p>
+  <strong>Dob:</strong>
+  <%= @customer.dob %>
+</p>
+
+<p>
+  <strong>Order:</strong>
+  <%= @customer.order %>
+</p>
+
+<%= link_to 'Edit', edit_customer_path(@customer) %> |
+<%= link_to 'Back', Order.find(@customer.order_id)%>

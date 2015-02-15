@@ -1,0 +1,34 @@
+<h3> Settings </h3>
+<p>
+These are all the default values for certain fields
+</p>
+
+<%= form_for @app_setting, url: '/settings' do |f| %>
+  <% if @app_setting.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@app_setting.errors.count, "error") %> prohibited this customer from being saved:</h2>
+
+      <ul>
+      <% @app_setting.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :head_hunting_fee %><br>
+    $<%= f.text_field :default_head_hunting_fee, :value => sprintf("%.2f", @app_setting.default_head_hunting_fee) %>
+  </div>
+  <div class="field">
+    <%= f.label :id_cost %><br>
+    $<%= f.text_field :default_id_cost, :value => sprintf("%.2f", @app_setting.default_id_cost) %>
+  </div>
+  <div class="field">
+    <%= f.label :id_price %><br>
+    $<%= f.text_field :default_id_price, :value => sprintf("%.2f", @app_setting.default_id_price) %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

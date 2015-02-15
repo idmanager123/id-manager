@@ -1,0 +1,37 @@
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th></th>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>State</th>
+      <th>Height</th>
+      <th>Weight</th>
+      <th>Hair color</th>
+      <th>Eye color</th>
+      <th>Dob</th>
+      <th>Paid</th>
+      <th>Sig</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @customers.each do |customer| %>
+      <tr>
+        <td><%= link_to(image_tag(customer.photo.url(:thumb)), customer) %></td>
+        <td><%= customer.first_name %></td>
+        <td><%= customer.last_name %></td>
+        <td><%= customer.state %></td>
+        <td><%= customer.height %></td>
+        <td><%= customer.weight %></td>
+        <td><%= customer.hair_color %></td>
+        <td><%= customer.eye_color %></td>
+        <td><%= customer.dob %></td>
+        <td class="<%=customer.paid?%>"> <%=customer.haspaid ? "Paid" : "Not paid"%></td>
+        <td><%= customer.has_sig? %>
+        <td><%= link_to 'Edit', edit_customer_path(customer) %></td>
+        <td><%= link_to 'Delete', customer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
