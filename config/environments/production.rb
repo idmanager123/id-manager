@@ -4,7 +4,6 @@ Rails.application.configure do
   paperclip_options = YAML.load_file File.expand_path('../../paperclip_options.yml', __FILE__)
   config.paperclip_defaults = paperclip_options["production"]
 
-  puts config.paperclip_defaults
   # Code is not reloaded between requests.
   config.cache_classes = true
 
