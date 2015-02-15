@@ -41,4 +41,4 @@ To see the deployment process, check out [the AWS guide](http://docs.aws.amazon.
 
 
 
-If you would like to donate, my btc address is `1A2SkMUqKnE5K7TX1ZAUxugzkq6SxB2JY7`
+If you find this project helpful and would like to donate, my btc address is `1A2SkMUqKnE5K7TX1ZAUxugzkq6SxB2JY7`
