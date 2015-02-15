@@ -23,7 +23,9 @@ class Customer < ActiveRecord::Base
   def self.states
     OptionConstants::STATES.collect {|c| [c,c]}
   end
-
+  def self.genders
+    OptionConstants::GENDERS.collect {|c| [c,c]}
+  end
   def paid?
     if self.haspaid
       return "paid"

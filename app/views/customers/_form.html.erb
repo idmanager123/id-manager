@@ -1,69 +1,76 @@
-  <%= form_for @customer, url: customer_path, :html => {:multipart => true}  do |f| %>
-    <% if @customer.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(@customer.errors.count, "error") %> prohibited this customer from being saved:</h2>
+<%= form_for @customer, url: customer_path, :html => {:multipart => true}  do |f| %>
+  <% if @customer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@customer.errors.count, "error") %> prohibited this customer from being saved:</h2>
 
-        <ul>
-          <% @customer.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
-
-    <div class="photo">
-      <%= image_tag @customer.photo.url(:form), class: "photo_img"%>
-      <%= f.file_field :photo%>
-    </div>
-    <div class="photo">
-      <%= image_tag @customer.sig.url(:form) %>
-      <%= f.file_field :sig%>
-    </div>
-
-    <div class="field">
-      <%= f.label :first_name %><br>
-      <%= f.text_field :first_name %>
-    </div>
-    <div class="field">
-      <%= f.label :last_name %><br>
-      <%= f.text_field :last_name %>
-    </div>
-    <div class="field">
-      <%= f.label :height %><br>
-      <%= f.text_field :height %>
-    </div>
-    <div class="field">
-      <%= f.label :weight %><br>
-      <%= f.text_field :weight %>
-    </div>
-      <div class="field">
-      <%= f.label :state %>
-      <%= f.label :referrer_id, {:class => "right-label-ref"}%><br>
-      <%= f.select :state, options_for_select(Customer.states),{}, {:class=>'btn btn-default dropdown-toggle'} %>
-      <%= f.select :referrer_id, options_for_select(@referrers),{}, {:class => 'btn btn-default right-dropdown dropdown-toggle'}%>
-    </div>
-
-      </div>
-      <div class="field">
-        <%= f.label :hair_color%>
-        <%= f.label :eye_color , {:class => "right-label"}%><br>
-        <%= f.select :eye_color, options_for_select(Customer.eye_colors),{}, {:class => 'btn btn-default dropdown-toggle'}%>
-        <%= f.select :hair_color, options_for_select(Customer.hair_colors),{}, {:class => 'btn btn-default right-dropdown dropdown-toggle'}%>
-      </div>
-    </div>
-    <div class="field">
-      <%= f.label :dob %><br>
-      <%= f.text_field :dob %>
-    </div>
-    <div class="field">
-      <%= f.label :order_id %><br>
-      <%= f.text_field :order_id %>
-    </div>
-    <div class="field">
-      <%=f.label :haspaid %>
-      <%= f.check_box :haspaid %>
-    </div>
-    <div class="actions">
-      <%= f.submit %>
+      <ul>
+        <% @customer.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
     </div>
   <% end %>
+
+  <div class="photo">
+    <%= image_tag @customer.photo.url(:form), class: "photo_img"%>
+    <%= f.file_field :photo%>
+  </div>
+  <div class="photo">
+    <%= image_tag @customer.sig.url(:form) %>
+    <%= f.file_field :sig%>
+  </div>
+
+  <div class="field">
+    <%= f.label :first_name %><br>
+    <%= f.text_field :first_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :last_name %><br>
+    <%= f.text_field :last_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :gender %> </br>
+    <%=f.select :gender, options_for_select(Customer.genders), {}, :class => 'btn btn-default dropdown-toggle'%>
+  </div>
+
+  <div class="field">
+    <%= f.label :state %>
+    <%= f.label :referrer_id, {:class => "right-label-ref"}%><br>
+    <%= f.select :state, options_for_select(Customer.states),{}, {:class=>'btn btn-default dropdown-toggle'} %>
+    <%= f.select :referrer_id, options_for_select(@referrers),{}, {:class => 'btn btn-default right-dropdown dropdown-toggle'}%>
+  </div>
+
+  <div class="field">
+    <%= f.label :height %><br>
+    <%= f.text_field :height %>
+  </div>
+
+  <div class="field">
+    <%= f.label :weight %><br>
+    <%= f.text_field :weight %>
+  </div>
+
+  <div class="field">
+    <%= f.label :hair_color%>
+    <%= f.label :eye_color , {:class => "right-label"}%><br>
+    <%= f.select :eye_color, options_for_select(Customer.eye_colors),{}, {:class => 'btn btn-default dropdown-toggle'}%>
+    <%= f.select :hair_color, options_for_select(Customer.hair_colors),{}, {:class => 'btn btn-default right-dropdown dropdown-toggle'}%>
+  </div>
+  <div class="field">
+    <%= f.label :dob %><br>
+    <%= f.text_field :dob %>
+  </div>
+  <div class="field">
+    <%= f.label :order_id %><br>
+    <%= f.text_field :order_id %>
+  </div>
+  <div class="field">
+    <%=f.label :haspaid %>
+    <%= f.check_box :haspaid %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

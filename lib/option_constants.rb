@@ -7,6 +7,7 @@ class OptionConstants
             "MN", "MO", "MS", "MT", "NC", "ND", "NE", "NH", "NJ", "NM", "NV",
             "NY", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT",
             "VA", "VT", "WA", "WV", "WY"]
+  GENDERS = %w{Male Female}
   class << self
     def random_eye_color
       EYE_COLORS.sample

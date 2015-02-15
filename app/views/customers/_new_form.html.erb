@@ -25,6 +25,10 @@
     <%= f.label :last_name %><br>
     <%= f.text_field :last_name %>
   </div>
+  <div class="field">
+    <%= f.label :gender %> </br>
+    <%=f.select :gender, options_for_select(Customer.genders), {}, :class => 'btn btn-default dropdown-toggle'%>
+  </div>
 
   <div class="field">
     <%= f.label :state %>
