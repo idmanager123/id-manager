@@ -1,0 +1,9 @@
+production:
+  # For sqlite instead of S3, just comment out the
+  # block below
+  # Make sure you add your AWS Bucket name and credentials
+  !ruby/sym storage: !ruby/sym s3
+  !ruby/sym s3_credentials:
+    !ruby/sym bucket: idmanager-photos
+    !ruby/sym access_key_id:
+    !ruby/sym secret_access_key:

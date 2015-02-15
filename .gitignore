@@ -1,7 +1,6 @@
 # Ignore bundler config.
 /.bundle
 Gemfile.lock
-/config/paperclip_options.yml
 # Ignore the default SQLite database.
 /db/schema.rb
 /db/*.sqlite3
