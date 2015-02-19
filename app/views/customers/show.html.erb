@@ -3,13 +3,8 @@
 <a href=<%= @customer.photo.url %>><%= image_tag @customer.photo.url(:small)%></a>
 </p>
 <p>
-  <strong>First name:</strong>
-  <%= @customer.first_name %>
-</p>
-
-<p>
-  <strong>Last name:</strong>
-  <%= @customer.last_name %>
+  <strong>Name</strong>
+  <%= @customer.first_name %> <%= @customer.last_name %>
 </p>
 
 <p>
@@ -33,14 +28,10 @@
 </p>
 
 <p>
-  <strong>Dob:</strong>
+  <strong>Date of Birth:</strong>
   <%= @customer.dob %>
 </p>
 
-<p>
-  <strong>Order:</strong>
-  <%= @customer.order %>
-</p>
 
 <%= link_to 'Edit', edit_customer_path(@customer) %> |
 <%= link_to 'Back', Order.find(@customer.order_id)%>

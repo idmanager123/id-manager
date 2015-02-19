@@ -47,8 +47,8 @@
   </div>
 
   <div class="field">
-      <%= f.label :hair_color%>
-      <%= f.label :eye_color , {:class => "right-label"}%><br>
+      <%= f.label :eye_color%>
+      <%= f.label :hair_color, {:class => "right-label"}%><br>
       <%= f.select :eye_color, options_for_select(Customer.eye_colors),{}, {:class => 'btn btn-default dropdown-toggle'}%>
       <%= f.select :hair_color, options_for_select(Customer.hair_colors),{}, {:class => 'btn btn-default right-dropdown dropdown-toggle'}%>
     </div>

@@ -51,6 +51,7 @@ class Customer < ActiveRecord::Base
       #{full_name} <br />
       State: #{state} <br />
       DOB: #{dob} <br />
+      Gender: #{gender} <br />
       Height: #{height}<br />
       Weight: #{weight}<br />
       Hair color: #{hair_color}<br />
