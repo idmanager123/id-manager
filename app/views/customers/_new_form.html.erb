@@ -38,6 +38,13 @@
   </div>
 
   <div class="field">
+    <%= f.label :eye_color%>
+    <%= f.label :hair_color, {:class => "right-label"}%><br>
+    <%= f.select :eye_color, options_for_select(Customer.eye_colors),{}, {:class => 'btn btn-default dropdown-toggle'}%>
+    <%= f.select :hair_color, options_for_select(Customer.hair_colors),{}, {:class => 'btn btn-default right-dropdown dropdown-toggle'}%>
+  </div>
+
+  <div class="field">
     <%= f.label :height %><br>
     <%= f.text_field :height %>
   </div>
@@ -46,16 +53,14 @@
     <%= f.text_field :weight %>
   </div>
 
-  <div class="field">
-      <%= f.label :eye_color%>
-      <%= f.label :hair_color, {:class => "right-label"}%><br>
-      <%= f.select :eye_color, options_for_select(Customer.eye_colors),{}, {:class => 'btn btn-default dropdown-toggle'}%>
-      <%= f.select :hair_color, options_for_select(Customer.hair_colors),{}, {:class => 'btn btn-default right-dropdown dropdown-toggle'}%>
-    </div>
     <div class="field">
       <%= f.label :dob %><br>
       <%= f.text_field :dob %>
     </div>
+  </div>
+  <div class="field">
+    <%= f.label :address %><br>
+    <%= f.text_field :address %>
   </div>
   <div class="field">
     <%= f.hidden_field :order_id %>

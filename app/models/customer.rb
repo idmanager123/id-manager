@@ -42,6 +42,14 @@ class Customer < ActiveRecord::Base
     end
   end
 
+  def has_address?
+    if address == ""
+      "No"
+    else
+      "Yes"
+    end
+  end
+
   def full_name
     "#{first_name} #{last_name}"
   end
@@ -56,6 +64,7 @@ class Customer < ActiveRecord::Base
       Weight: #{weight}<br />
       Hair color: #{hair_color}<br />
       Eye Color: #{eye_color}<br />
+      Address: #{address}<br />
     eof
   end
 

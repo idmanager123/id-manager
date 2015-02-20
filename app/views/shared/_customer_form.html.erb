@@ -12,6 +12,7 @@
       <th>Dob</th>
       <th>Paid</th>
       <th>Sig</th>
+      <th>Address</th>
       <th colspan="2"></th>
     </tr>
   </thead>
@@ -28,7 +29,8 @@
         <td><%= customer.eye_color %></td>
         <td><%= customer.dob %></td>
         <td class="<%=customer.paid?%>"> <%=customer.haspaid ? "Paid" : "Not paid"%></td>
-        <td><%= customer.has_sig? %>
+        <td><%= customer.has_sig? %><td>
+        <td><%= customer.has_address? %></td>
         <td><%= link_to 'Edit', edit_customer_path(customer) %></td>
         <td><%= link_to 'Delete', customer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
